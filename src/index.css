@@ -74,3 +74,25 @@
     background-color: white;
     
 }
+
+.section_inputs>button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon>h3 {
+    font-size: 15px;
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+.temperature>h1 {
+    font-size: 50px;
+}

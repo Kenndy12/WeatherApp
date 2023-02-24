@@ -1,13 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import getWeatherData from "./api";
 import coldBg from "./assets/cold.jpg";
 import hotBg from "./assets/hot.jpg";
+import Descriptions from "./components/Descriptions";
 
 function App() {
+
+  const[weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async() => {
       const data = await getWeatherData("paris");
+      setWeatherData(data);
+      console.log(data); 
     }
     fetchWeatherData();
   }, [])
@@ -34,6 +39,7 @@ function App() {
           </div>
 
           {/* Bottom Description */}
+          <Descriptions/>
         </div>
       </div>
     </div>
