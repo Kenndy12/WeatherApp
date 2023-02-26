@@ -14,23 +14,28 @@ function App() {
   useEffect(() => {
     const fetchWeatherData = async() => {
       const data = await getWeatherData(city, tempUnit);
-      setWeatherData(data);
-      
-      const threshold = tempUnit === "metric" ? 20 : 60;
-      if(weatherData.temp <= threshold) {
-        setBackground(coldBg)
-      } 
-      else {
-        setBackground(hotBg)
-      }
+      setWeatherData(data);   
     }
+    
     fetchWeatherData();
   }, [tempUnit, city])
+
+  useEffect(() => {
+    const changeBackground = async() => {
+    const threshold = tempUnit === "metric" ? 20 : 60;
+    if(weatherData.temp <= threshold) {
+      setBackground(coldBg)
+    } 
+    else {
+      setBackground(hotBg)
+    }
+    }
+    changeBackground();  
+  },[weatherData])
 
   const handleUnitClicked = (e) => {
       const button = e.currentTarget;
       const currentTempUnit = button.innerText.slice(1);
-      console.log(currentTempUnit);
 
       const isCelcius = currentTempUnit === "C";
       button.innerText = isCelcius ? "°F" : "°C";
