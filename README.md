@@ -1,6 +1,6 @@
 # Weather App
 
-Weather app is react application designed with OpenWeatherAPI, the app allows you to view current weather on different cities supported by the API.
+Weather app is a React.js application designed with OpenWeatherAPI, the app allows you to view current weather on different cities supported by the API.
 The app also allows viewers to see the current temperature, the coldest and hottest temperature of that day, what the temperature feels like, the pressure,
 the humidity, and the wind speed.
 
